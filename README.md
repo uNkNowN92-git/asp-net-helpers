@@ -23,12 +23,46 @@
 @Html.RadioButtonToggleFor(Model => Model.YesOrNo, new { @id = "test", @class = "my-class", toggleButtons = toggleButtons })
 ```
 
+###HTML Markup:
+```html
+<div class="radio-button-toggle btn-group" data-toggle="buttons" id="test">
+    <label class="btn btn-default radio-button-toggle-true active">
+        <input id="YesOrNoTrue" name="YesOrNo" type="radio" value="True">
+    </label>
+    <label class="btn btn-default radio-button-toggle-false">
+        <input checked="checked" id="YesOrNoFalse" name="YesOrNo" type="radio" value="False">
+    </label>
+</div>
+```
+
 ###CSS:
 ```css
-.radio-button-toggle.btn-group .active {
-    background-color: #2E89B5 !important;
+.radio-button-toggle.btn-group .radio-button-toggle-true.active {
+    background-color: #3276b1 !important;
     color: white;
+    cursor: default;
 }
+
+.radio-button-toggle.btn-group .radio-button-toggle-false.active {
+    background-color: #d7d7d7 !important;
+    color: white;
+    cursor: default;
+}
+
+.radio-button-toggle.btn-group .radio-button-toggle-true,
+.radio-button-toggle.btn-group .radio-button-toggle-false {
+    color: transparent;
+}
+
+    .radio-button-toggle.btn-group .radio-button-toggle-true:not(.active):hover {
+        /* uncomment background color to display text on hover */
+        /*color: white;*/
+    }
+
+    .radio-button-toggle.btn-group .radio-button-toggle-false:not(.active):hover {
+        /* uncomment background color to display text on hover */
+        /*color: black;*/
+    }
 ```
 
 ###Extension Methods and Variables:
