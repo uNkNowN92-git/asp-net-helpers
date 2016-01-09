@@ -3,7 +3,7 @@
 ##Radio Button Toggle Helper Extension
 
 ###Usage:
-```html
+```razor
 @* Razor *@
 
 @* Simple *@
